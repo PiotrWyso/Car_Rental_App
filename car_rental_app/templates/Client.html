@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+        <h1>CLIENT VIEW</h1>
+        <h2>Full name: {{ client.name }} {{ client.surname }}</h2>
+        <div>Street: {{ client.strname }} {{ client.homenum}} / {{client.flatnum}}</div>
+        <div>ID number: {{ client.idnum }}</div>
+        <div>Driving licences number: {{ client.dlnum }}</div>
+        <div>PESEL: {{ client.pesel }}</div>
+        <div>Phone number: {{ client.phonenum }}</div>
+        <div>Email: {{ client.email }}</div>
+
+
+        <h2>Reservations:</h2>
+        <ul>
+            {% for res in reservations %}
+                <li><a href="/reservation_view/{{ res.id }}" > {{ res.start_date }} {{ res.end_date }} {{ res.driver }}</a> {{ res.car }}</li>
+            {% endfor %}
+        </ul>
+        <h4><a href='/Add_Reservation'>Add reservation</a> </h4>
+
+{%  endblock %}

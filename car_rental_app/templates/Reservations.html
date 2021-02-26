@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>RESRVATION LIST:</h1>
+        <ul>
+            {% for res in reservations %}
+            <li>  <a href="/reservation_view/{{res.id}}"> {{ res.start_date }} {{ res.end_date }} {{ res.driver }} </a>  {{ res.car }} status: {{ res.status }}<a href="/Reservation_Edit/{{res.id}}"> EDIT Reservation </a></li>
+            {% endfor %}
+        </ul>
+    <h4><a href='/Add_Reservation'>Add reservation</a> </h4>
+{%  endblock %}

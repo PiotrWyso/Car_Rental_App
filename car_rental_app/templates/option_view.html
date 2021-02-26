@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+        <h1>OPTIONS VIEW</h1>
+        <h2>Reservation: {{ option.reservation}}</h2>
+        <div>Child seat: {{ option.child_seat}}</div>
+        <div>Number of child seats: {{ option.number_of_cs}}</div>
+        <div>Additional driver: {{ option.additional_driver}}</div>
+        <div>Abolition: {{ option.abolition }}</div>
+        <div>Insurence: {{ option.insurence }}</div>
+        <<h4><a href='/option_edit/{{ option.id }}'></a> </h4>
+{%  endblock %}

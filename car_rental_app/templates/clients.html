@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>List of clients:</h1>
+        <ul>
+            {% for client in clients %}
+            <li>  <a href="/Client/{{client.id}}"> {{ client.name }} {{ client.surname }} </a> {{ client.phonenum }} {{ client.email }} {{ client.dlnum }}  <a href="/edit_client/{{client.id}}"> EDIT Client </a> <a href="/client_confirm_delete/{{client.id}}"> DELETE Client </a> </li>
+            {% endfor %}
+        </ul>
+    <h4><a href='/client_form'>Add client</a> </h4>
+{%  endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>REGISTER</h1>
+<div>Please fill the form if You are an employee</div>
+<form method="post">
+    {% csrf_token %}
+    {{  form.as_p }}
+    <input type="submit" value="Add!">
+</form>
+{%  endblock %}

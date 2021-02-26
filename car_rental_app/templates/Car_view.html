@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+        <h1>CAR VIEW</h1>
+        <h2>Car: {{ car.brand}} {{ car.car_model }}</h2>
+        <div>Car class: {{ car.car_class}}</div>
+        <div>Body type: {{ car.body_type}}</div>
+        <div>Engine Type: {{ car.engine_type}}</div>
+        <div>Engine capicty: {{ car.eng_capicity }}</div>
+        <div>HP: {{ car.hp }}</div>
+        <div>Date of production {{ car.d_production}}</div>
+        <div>VIN: {{ car.vin}}</div>
+        <div>Registration plates: {{ car.reg_plates}}</div>
+        <div>Next car inspection date: {{ car.car_inspection}}</div>
+        <div>Date of end Insurence Validation: {{ car.insurence }}</div>
+        <div>Millage: {{ car.millage}}</div>
+        <div>Next service at: {{ car.next_service}} km</div>
+        <div>Person capicity: {{ car.p_capicity}}</div>
+        <div>Number of doors: {{ car.num_of_doors}}</div>
+        <div>Damges: {{ car.damage }}</div>
+        <div>Status: {{ car.status }}</div>
+
+        <h4><a href='/edit_car/{{ car.id }}'>Edit car</a> </h4>
+
+        <h2>Reservations:</h2>
+        <ul>
+            {% for res in reservations %}
+                <li>  {{ res.start_date }} {{ res.end_date }} {{ res.driver }}</li>
+            {% endfor %}
+        </ul>
+        <h4><a href='/Add_Reservation'>Add Reservation</a></h4>
+        <h2>Damages:</h2>
+        <ul>
+            {% for dam in damages %}
+                <li>  Data:{{ dam.date }} Opis:{{ dam.title}} {{ dam.d_status }} </li>
+            {% endfor %}
+        </ul>
+
+        <h4><a href='/Add_damage'>Add damage</a> </h4>
+{%  endblock %}

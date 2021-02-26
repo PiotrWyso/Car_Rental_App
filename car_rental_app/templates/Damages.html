@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Damages list:</h1>
+        <ul>
+            {% for dam in damages %}
+            <li>  <a href="/damage/{{dam.id}}"> {{ dam.date }} {{ dam.car }} </a> {{ dam.type }} {{ dam.d_status }} <a href="/edit_damage/{{damage.id}}"> EDIT DAMAGE </a></li>
+            {% endfor %}
+        </ul>
+{%  endblock %}

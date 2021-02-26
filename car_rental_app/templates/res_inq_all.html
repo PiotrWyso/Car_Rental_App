@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Reservation query list:</h1>
+        <ul>
+            {% for resinq in res_inq_all %}
+            <li>  <a href="/res_inq/{{resinq.id}}"> From {{ resinq.start_date }} To {{ resinq.end_date }} </a> {{ resinq.name }} {{ resinq.surname }} car class: {{ resinq.car_class }}   <a href="/res_inq_confirm_delete/{{res_inq.id}}"> DELETE </a></li>
+            {% endfor %}
+        </ul>
+{%  endblock %}

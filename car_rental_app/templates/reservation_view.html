@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+        <h1>Reservation VIEW</h1>
+        <h2>Start date: {{ reservation.start_date }} End date: {{ reservation.end_date }}</h2>
+        <div>Client: {{ reservation.driver }}</div>
+        <div>Car: {{ reservation.car }}</div>
+        <div>Millage done: {{ reservation.millage_done }}</div>
+        <div>Reservation status: {{ reservation.reservation_status }}</div>
+        <h4><a href='/Reservation_Edit/{{reservation.id}}'>Edit Reservation</a> </h4>
+
+        <h2>Reservation Option:</h2>
+        <div>Number of child seats: {{ resop.num_of_cs }}</div>
+        <div>Additional driver: {{ resop.additional_driver}}</div>
+        <div>Damage abolition: {{resop.abolition}}</div>
+        <div>Insurance: {{resop.insurence}}</div>
+        <h4><a href='/add_option/{{resop.id}}'>Add option</a> </h4>
+{%  endblock %}

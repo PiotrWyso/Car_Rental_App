@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+        <h1>Client Inquiry</h1>
+        <div>Client: {{resinq.name}} {{resinq.surname}}</div>
+        <div>Starting date: {{ resinq.start_date}}</div>
+        <div>Ending date: {{resinq.end_date}}</div>
+        <div>Car class: {{ resinq.car_class}}</div>
+        <div>Abolition: {{ resinq.abolition }}</div>
+        <div>Insurance: {{ resinq.insurence }}</div>
+        <div>Child_seat: {{ resinq.child_seat}}</div>
+        <div>Number of child seats: {{ resinq.num_of_cs}}</div>
+        <div>Additional driver: {{ resinq.additional_driver}}</div>
+        <div>Phone number: {{ resinq.phonenum_q}}</div>
+        <div>e-mail: {{ resinq.email_q}}</div>
+
+        <h4><a href='/res_inq_confirm_delete/{{ res_inq.id }}'>Delete inquiry</a> </h4>
+{%  endblock %}

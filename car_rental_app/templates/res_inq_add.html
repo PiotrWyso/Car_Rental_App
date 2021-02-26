@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>CHOOSE CAR</h1>
+<div>please choose car class</div>
+<form method="post">
+    {% csrf_token %}
+    {{  form.as_p }}
+    <input type="submit" value="NEXT!">
+</form>
+{%  endblock %}

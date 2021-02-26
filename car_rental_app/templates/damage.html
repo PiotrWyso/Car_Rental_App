@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+        <h1>DAMAGE VIEW</h1>
+        <h2> {{ damage.title}}</h2>
+        <div>Date: {{ damage.date}}</div>
+        <div>Car: {{damage.car}}</div>
+        <div>Driver: {{ damage.driver}}</div>
+        <div>Title: {{ damage.title }}</div>
+        <div>Damage note: {{ damage.d_note }}</div>
+        <div>Damage parts: {{ damage.damage_part }}</div>
+        <div>Status: {{ damage.d_status}}</div>
+        <h4><a href='/edit_car_damage/{{damage.id}}'>Edit damage</a> </h4>
+{%  endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>List of cars:</h1>
+        <ul>
+            {% for car in cars %}
+            <li>  <a href="/Car_view/{{car.id}}"> {{ car.brand }} {{ car.car_model }} </a> {{ car.reg_plates }} {{ car.millage }}km status : {{ car.status }} damages{{car.damage}} <a href="/edit_car/{{car.id}}"> EDIT CAR </a> <a href="car_confirm_delete/{{car.id}}"></a></li>
+            {% endfor %}
+        </ul>
+    <h4><a href='/Add_car'>Add car</a> </h4>
+{%  endblock %}
