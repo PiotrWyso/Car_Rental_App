@@ -44,6 +44,6 @@ def test_add_damage_car(client, authorized_user1, test_car, test_client, test_pa
 @pytest.mark.django_db
 def test_update_reservation(client, unauthorized_user, test_reservation):
     client.force_login(unauthorized_user)
-    response = client.post(f'Reservation_Edit/<int:{test_reservation.id}>', {'start_date':'2021-01-12'})
+    response = client.post(f'Reservation_Edit/{test_reservation.id}', {'start_date':'2021-01-12'})
     print(response.content)
     assert response.status_code == 403
