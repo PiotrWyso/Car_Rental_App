@@ -1,5 +1,5 @@
 import django.forms as forms
-from car_rental_app.models import Client, STATUS, Car, CARCLASS, CHILD_SEAT, INSURENCE,ENGINE_TYPE,BODY_TYPE, STATUS, D_STATUS,D_QUANTITY,D_TYPE, Reservation, Y_N, DamagePart
+from car_rental_app.models import Client, STATUS, Car, CARCLASS, CHILD_SEAT, INSURENCE,ENGINE_TYPE,BODY_TYPE, STATUS, D_STATUS,D_QUANTITY,D_TYPE, Reservation, Y_N, DamagePart,CarDamage
 from django.core.validators import EmailValidator, URLValidator, ValidationError
 from .validators import validate_dlnum, validate_idnum, validate_login
 from django.views.generic.edit import FormView, CreateView, UpdateView, DeleteView
@@ -32,8 +32,12 @@ class CarDamageForm(forms.Form):
     date = forms.DateField(widget=forms.SelectDateWidget,label="Date of accident:")
     title = forms.CharField(label="Title:")
     d_note = forms.CharField(widget=forms.Textarea, label="Damages description:")
-    damage_parts = forms.ModelMultipleChoiceField(DamagePart.objects.all())
     d_status = forms.ChoiceField(choices=D_STATUS, label="Damage status:")
+
+class AddPartDamage(forms.Form):
+    damage_parts = forms.ModelMultipleChoiceField(DamagePart.objects.all(), required=False)
+    damage = forms.ModelChoiceField(CarDamage.objects.all())
+
 
 class AddCarForm(forms.Form):
     brand = forms.CharField(max_length=16, label="Name")

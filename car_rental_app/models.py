@@ -154,7 +154,8 @@ class CarDamage(models.Model):
     damage_part = models.ManyToManyField(DamagePart)
     title = models.CharField(max_length=64, verbose_name="Title", default=None)
     d_note = models.TextField(default=None, verbose_name="Damages description")
-
+    def __str__(self):
+        return "{}{}".format(self.date, self.title)
 
 
 

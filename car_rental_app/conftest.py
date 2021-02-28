@@ -14,7 +14,9 @@ def authorized_user():
 def authorized_user1():
     authorized_user1 = User.objects.create_user("Wilku")
     perm = Permission.objects.get(codename="add_cardamage")
+    perm1 = Permission.objects.get(codename="add_reservationoptions")
     authorized_user1.user_permissions.add(perm)
+    authorized_user1.user_permissions.add(perm1)
     return authorized_user1
 
 @pytest.fixture

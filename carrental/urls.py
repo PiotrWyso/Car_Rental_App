@@ -22,7 +22,7 @@ from car_rental_app.views import ClientFormView, AddCarView, CarView, AddDamgeVi
                                 DamagesView, DamageView, OptionsAddFormView, OptionView, OptionDeleteViewByAutoView,\
                                 OptionUpdateViewByAutoView, ResInqCreateViewByAutoView, ResInqUpdateViewByAutoView,\
                                 ResInq1UpdateViewByAutoView, ResInqView, ResInqAllView, ResInqDeleteViewByAutoView, AddUserView,\
-                                LogOut, LoginUserView, AboutUsView, FleetView, AddPartView
+                                LogOut, LoginUserView, AboutUsView, FleetView, AddPartView, AddPartsDamageView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -80,5 +80,6 @@ urlpatterns = [
     path('fleet_view/', FleetView.as_view()),
 
     ##### PARTS #####
-    path('part_add/', AddPartView.as_view())
+    path('part_add/', AddPartView.as_view()),
+    path('damage_part/', AddPartsDamageView.as_view())
 ]
